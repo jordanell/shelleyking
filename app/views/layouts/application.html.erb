@@ -21,7 +21,9 @@
   <body>
     <%= render partial: 'common/header' %>
 
-    <%= yield %>
+    <div class="page-content">
+      <%= yield %>
+    </div>
 
     <%= render partial: 'common/footer' %>
   </body>

@@ -1,0 +1,83 @@
+#header {
+  $header-meta-height: 100px;
+  $header-menu-line-height: 75px;
+  $header-menu-link-padding: 0 1em;
+
+  .meta-container {
+    @include outer-container;
+
+    padding: 0 0.5em 1em;
+
+    .title, .logo {
+      height: 100%;
+    }
+
+    .title {
+      @include span-columns(8);
+    }
+
+    .logo {
+      @include span-columns(4);
+      @include omega;
+
+      text-align: right;
+      position: relative;
+    }
+
+    img {
+      max-width: 300px;
+      max-height: 65px;
+      margin-top: 10px;
+
+      @media screen and (max-width: $medium) {
+        max-width: 250;
+        max-height: 50px;
+        margin-top: 15px;
+      }
+
+      @media screen and (max-width: $small) {
+        max-width: 100%;
+        max-height: 50px;
+      }
+    }
+
+    h1, h3 {
+      display: inline-block;
+    }
+
+    h1 {
+      margin-bottom: 0;
+      margin-right: 20px;
+
+      @media screen and (max-width: $medium) {
+        font-size: 1.75em;
+      }
+
+      @media screen and (max-width: $small) {
+        font-size: 1.5em;
+      }
+    }
+
+    h3 {
+      @media screen and (max-width: $medium) {
+        font-size: 1em;
+      }
+
+      @media screen and (max-width: $small) {
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  .menu-container {
+    line-height: $header-menu-line-height;
+    text-align: center;
+    box-shadow: 0 0 8px 1px $shadow-light;
+
+    li {
+      display: inline-block;
+      padding: $header-menu-link-padding;
+      font-size: 16px;
+    }
+  }
+}

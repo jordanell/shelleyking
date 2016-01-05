@@ -1,0 +1,30 @@
+$link-letter-spacing: 2px;
+$page-content-min-height: 600px;
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: $bg-light;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  line-height: 1.8em;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  font-weight: $font-weight-light;
+  letter-spacing: $link-letter-spacing;
+  word-wrap: break-word;
+
+  @include transition(color .2s ease-in-out);
+}
