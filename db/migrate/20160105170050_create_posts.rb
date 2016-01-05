@@ -1,0 +1,13 @@
+class CreatePosts < ActiveRecord::Migration
+  def change
+    create_table :posts do |t|
+      t.string  :title, null: false
+      t.text    :body
+      t.string  :slug, null: false
+      t.boolean :featured, default: false
+      t.boolean :visible, default: false
+
+      t.timestamps
+    end
+  end
+end
