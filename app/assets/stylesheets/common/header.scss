@@ -74,10 +74,56 @@
     text-align: center;
     box-shadow: 0 0 8px 1px $shadow-light;
 
-    li {
+    ul {
+      position: relative;
+    }
+
+    ul li {
       display: inline-block;
       padding: $header-menu-link-padding;
       font-size: 16px;
+      list-style: none;
+      position: relative;
+      border-left: $base-border;
+      border-right: $base-border;
+      border-color: transparent;
+    }
+
+    ul li > a:after {
+      content:  ' +';
+    }
+
+    ul li > a:only-child:after {
+      content: '';
+    }
+
+    ul ul {
+      display: none;
+      position: absolute;
+      left: -1px;
+      width: 300px;
+      background-color: $bg-light;
+      border: $base-border;
+      border-top: none;
+    }
+
+    ul li:hover {
+      border-color: $border-light;
+
+      ul {
+        display: inherit;
+      }
+    }
+
+    ul ul li {
+      text-align: left;
+      display: list-item;
+      position: relative;
+      line-height: 50px;
+    }
+
+    ul ul li:hover {
+      border-color: transparent;
     }
   }
 }
