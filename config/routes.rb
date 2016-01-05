@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   # Root
   root 'root#show'
 
+  # Static page routes
+  StaticController::STATIC_PAGES.each do |page|
+    get "/#{page}", to: "static##{page}"
+  end
+
   # Blog posts
   resources :posts, only: [:index, :show]
   get '/blog', to: 'posts#index', as: 'blog'
