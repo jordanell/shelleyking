@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Shelleyking</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Shelley King - Realtor</title>
 
-<%= yield %>
+    <!-- Google font Montserrat -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
-</body>
+    <!--Application stylesheet and javascript -->
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <!--Favicons -->
+    <%= render partial: 'common/favicons' %>
+
+    <!-- Display the SEO meta tags -->
+    <%= display_meta_tags %>
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render partial: 'common/header' %>
+
+    <%= yield %>
+
+    <%= render partial: 'common/footer' %>
+  </body>
 </html>
