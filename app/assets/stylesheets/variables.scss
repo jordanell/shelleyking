@@ -8,11 +8,20 @@ $white: #FFFFFF;
 $bg-light: #FFFFFF;
 $bg-dark: #F9F9F9;
 
-// Font-weights
+// Font weights
 $font-weight-light: 300;
 
+// Font colors
+$font-dark: #181818;
+$font-medium: rgba(0, 0, 0, 0.6);
+
+// Font opacities
+$font-opacity-full: rgba(255, 255, 255, 1);
+$font-opacity-medium: rgba(255, 255, 255, 0.8);
+$font-opacity-low: rgba(255, 255, 255, 0.4);
+
 // Border colors
-$border-light: rgba(26, 26, 26, 0.2);
+$border-light: rgba(26, 26, 26, 0.1);
 
 // Borders
 $base-border: 1px solid $border-light;

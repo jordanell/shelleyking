@@ -8,10 +8,6 @@
 
     padding: 0 0.5em 1em;
 
-    .title, .logo {
-      height: 100%;
-    }
-
     .title {
       @include span-columns(8);
     }
@@ -48,6 +44,7 @@
     h1 {
       margin-bottom: 0;
       margin-right: 20px;
+      color: $font-dark;
 
       @media screen and (max-width: $medium) {
         font-size: 1.75em;
@@ -59,6 +56,8 @@
     }
 
     h3 {
+      color: $font-medium;
+
       @media screen and (max-width: $medium) {
         font-size: 1em;
       }
@@ -74,56 +73,82 @@
     text-align: center;
     box-shadow: 0 0 8px 1px $shadow-light;
 
-    ul {
-      position: relative;
-    }
+    .nav-item {
+      @include transition(color .2s ease-in-out);
 
-    ul li {
       display: inline-block;
+      position: relative;
       padding: $header-menu-link-padding;
       font-size: 16px;
-      list-style: none;
-      position: relative;
       border-left: $base-border;
       border-right: $base-border;
       border-color: transparent;
+      color: $font-medium;
     }
 
-    ul li > a:after {
-      content:  ' +';
-    }
-
-    ul li > a:only-child:after {
-      content: '';
-    }
-
-    ul ul {
-      display: none;
-      position: absolute;
-      left: -1px;
-      width: 300px;
-      background-color: $bg-light;
-      border: $base-border;
-      border-top: none;
-    }
-
-    ul li:hover {
+    .nav-item:hover {
       border-color: $border-light;
+      color: $red;
 
-      ul {
+      > ul {
+        opacity: 1;
         display: inherit;
       }
     }
 
-    ul ul li {
+    ul li:after {
+      content:  ' +';
+    }
+
+    ul li:only-child:after {
+      content: '';
+    }
+
+    .nav-sub-item {
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .sub-menu {
+      @include transition(opacity .2s ease-in-out);
+
+      opacity: 0;
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: -1px;
+      width: 300px;
+      z-index: $z-index-low;
+      background-color: $bg-light;
+      border: $base-border;
+    }
+
+    .nav-sub-item {
+      @include transition(background-color .2s ease-in-out);
+
       text-align: left;
       display: list-item;
       position: relative;
-      line-height: 50px;
+      line-height: 40px;
+      padding: 0 1em;
     }
 
-    ul ul li:hover {
-      border-color: transparent;
+    .nav-sub-item:hover {
+      background-color: $bg-dark;
+    }
+
+    @media screen and (max-width: $small) {
+      ul {
+        line-height: 45px;
+      }
+
+      .nav-item {
+        width: 100%;
+      }
+
+      .sub-menu {
+        width: 100%;
+      }
     }
   }
 }
