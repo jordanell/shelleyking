@@ -1,3 +1,20 @@
 <div class="posts-show">
-
+  <div class="hero-container">
+    <div class="hero-image">
+      <%= image_tag(@post.hero_image.url(:medium)) %>
+    </div>
+    <div class="hero-title">
+      <h2><%= @post.title %></h2>
+    </div>
+  </div>
+  <div class="content-container">
+    <div class="content-block">
+      <div class="content-block-inner">
+        <%= render partial: 'posts/meta', locals: { post: @post } %>
+        <p>
+          <%= @post.body.html_safe %>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

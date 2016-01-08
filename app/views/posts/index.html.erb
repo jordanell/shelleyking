@@ -1,3 +1,28 @@
 <div class="posts-index">
-
+  <div class="hero-container">
+    <div class="hero-image">
+      <%= image_tag('banners/blog.jpg') %>
+    </div>
+    <div class="hero-title">
+      <h2>Blog</h2>
+      <h3> - A few short stories</h3>
+    </div>
+  </div>
+  <div class="content-container">
+    <div class="content-block">
+      <div class="content-block-inner">
+        <div class="post-list-items">
+          <% if @posts.try(:length) > 0 %>
+            <% @posts.each do |post| %>
+              <%= render partial: 'posts/list_item', locals: { post: post } %>
+            <% end %>
+          <% else %>
+            <p>
+              I have not created any posts yet! Check back soon.
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
