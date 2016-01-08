@@ -5,13 +5,13 @@
     </div>
     <div class="hero-title">
       <h2>Blog</h2>
-      <h3> - A few short stories</h3>
+      <h3> - a few short stories</h3>
     </div>
   </div>
   <div class="content-container">
     <div class="content-block">
       <div class="content-block-inner">
-        <div class="post-list-items">
+        <div class="post-list-items center">
           <% if @posts.try(:length) > 0 %>
             <% @posts.each do |post| %>
               <%= render partial: 'posts/list_item', locals: { post: post } %>

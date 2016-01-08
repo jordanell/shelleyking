@@ -1,0 +1,24 @@
+.static-contact {
+  .left-info, .right-info {
+    @include span-columns(6);
+  }
+
+  .left-info {
+    @media screen and (max-width: $small) {
+      @include fill-parent;
+
+      margin-bottom: 50px;
+      text-align: center;
+    }
+  }
+
+  .right-info {
+    @include omega;
+
+    @media screen and (max-width: $small) {
+      @include fill-parent;
+
+      text-align: center;
+    }
+  }
+}

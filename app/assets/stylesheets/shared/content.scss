@@ -7,7 +7,6 @@
   @include outer-container;
 
   padding: 96px 0;
-  text-align: center;
   border-bottom: $base-border;
   margin-bottom: 10px;
 
@@ -17,8 +16,8 @@
 }
 
 .content-block-inner {
-  @include span-columns(8);
-  @include shift(2);
+  @include span-columns(10);
+  @include shift(1);
 
   @media screen and (max-width: $medium) {
     @include span-columns(10);
