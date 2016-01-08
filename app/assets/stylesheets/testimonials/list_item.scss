@@ -1,0 +1,24 @@
+.testimonial-list-items {
+  @include outer-container;
+}
+
+.testimonial-list-item {
+  @include span-columns(4);
+  @include omega(3);
+
+  @media screen and (max-width: $medium) {
+    @include span-columns(6);
+    @include omega-reset(3n);
+    @include omega(2);
+  }
+
+  @media screen and (max-width: $small) {
+    @include fill-parent;
+
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,7 +1,7 @@
-<div class="testiomonials-index">
+<div class="testimonials-index">
   <div class="hero-container">
     <div class="hero-image">
-      <%= image_tag('banners/blog.jpg') %>
+      <%= image_tag('banners/boats.jpg') %>
     </div>
     <div class="hero-title">
       <h2>Testimonials</h2>
@@ -12,9 +12,9 @@
     <div class="content-block">
       <div class="content-block-inner">
         <div class="testimonial-list-items">
-          <% if @testiomonials && @testiomonials.length > 0 %>
-            <% @testiomonials.each do |testimonial| %>
-              <%= render partial: 'testiomonials/list_item', locals: { testimonial: testimonial } %>
+          <% if @testimonials && @testimonials.length > 0 %>
+            <% @testimonials.each do |testimonial| %>
+              <%= render partial: 'testimonials/list_item', locals: { testimonial: testimonial } %>
             <% end %>
           <% else %>
             <p>
