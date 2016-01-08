@@ -1,0 +1,28 @@
+<div class="testiomonials-index">
+  <div class="hero-container">
+    <div class="hero-image">
+      <%= image_tag('banners/blog.jpg') %>
+    </div>
+    <div class="hero-title">
+      <h2>Testimonials</h2>
+      <h3> - See what everyone is saying</h3>
+    </div>
+  </div>
+  <div class="content-container">
+    <div class="content-block">
+      <div class="content-block-inner">
+        <div class="testimonial-list-items">
+          <% if @testiomonials && @testiomonials.length > 0 %>
+            <% @testiomonials.each do |testimonial| %>
+              <%= render partial: 'testiomonials/list_item', locals: { testimonial: testimonial } %>
+            <% end %>
+          <% else %>
+            <p>
+              There are no testimonials yet. Check back soon!
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

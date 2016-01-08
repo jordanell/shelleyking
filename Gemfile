@@ -44,6 +44,9 @@ gem 'aws-sdk', '1.64.0'
 # Used for SEO meta tags
 gem 'meta-tags', '2.0.0'
 
+# For creating ordered lists
+gem 'acts_as_list', '0.7.2'
+
 group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

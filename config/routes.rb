@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   # Blog posts
   resources :posts, only: [:index, :show]
   get '/blog', to: 'posts#index', as: 'blog'
+
+  # Testimonials
+  resources :testimonials, only: [:index]
 end
