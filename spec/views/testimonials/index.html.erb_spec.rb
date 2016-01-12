@@ -10,7 +10,7 @@ describe 'testimonials/index.html.erb' do
 
     render
 
-    rendered.should have_content(@testimonials[0].quote)
+    rendered.should render_template(partial: 'testimonials/_list_item')
   end
 
   it 'should render no testimonials message' do
