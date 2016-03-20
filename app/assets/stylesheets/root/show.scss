@@ -1,0 +1,107 @@
+.root-show {
+  .listing-type-container {
+    @include span-columns(4);
+    @include transition(all .2s ease-in-out);
+
+    padding: 0 1em;
+    border: 1px solid transparent;
+    border-radius: $base-border-radius;
+
+    &:hover {
+      border: 1px solid $red;
+    }
+
+    img {
+      width: 100%;
+      height: 300px;
+    }
+
+    @media screen and (max-width: $small) {
+      @include fill-parent;
+
+      margin-bottom: 50px;
+    }
+  }
+
+  .query-container {
+    #listings_query {
+      width: 80%;
+    }
+
+    .listings_bedrooms,
+    .listings_bathrooms,
+    .price-range-container {
+      @include span-columns(4);
+    }
+
+    .listings_bedrooms,
+    .listings_bathrooms {
+      @media screen and (max-width: $medium) {
+        @include span-columns(6);
+
+        margin-bottom: 2em;
+      }
+
+      @media screen and (max-width: $small) {
+        @include fill-parent;
+      }
+    }
+
+    .listings_bathrooms {
+      @media screen and (max-width: $medium) {
+        @include omega;
+
+        margin-bottom: 2em;
+      }
+    }
+
+    .price-range-container {
+      @include omega;
+
+      @media screen and (max-width: $medium) {
+        @include fill-parent;
+      }
+    }
+
+    .price-range-label {
+      padding-top: 0.4em;
+    }
+
+    .submit {
+      @include fill-parent;
+
+      margin-top: 2em;
+    }
+  }
+
+  .short-bio-container {
+    @include span-columns(8);
+
+    p {
+      margin-top: 0;
+    }
+
+    @media screen and (max-width: $small) {
+      @include fill-parent;
+
+      margin-bottom: 50px;
+    }
+  }
+
+  .photo-container {
+    @include span-columns(4);
+    @include omega;
+
+    text-align: center;
+
+    img {
+      max-width: 300px;
+      max-height: 300px;
+      margin-bottom: 1em;
+    }
+
+    @media screen and (max-width: $small) {
+      @include fill-parent;
+    }
+  }
+}

@@ -6,6 +6,11 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+// Import all jQuery styles needed
+@import 'jquery-ui/core';
+@import 'jquery-ui/theme';
+@import 'jquery-ui/slider';
+
 // Import global styles
 @import 'variables';
 @import 'global';
@@ -18,6 +23,9 @@
 
 // Import layout styles
 @import 'layouts/manifest';
+
+// Import root styles
+@import 'root/manifest';
 
 // Import post styles
 @import 'posts/manifest';

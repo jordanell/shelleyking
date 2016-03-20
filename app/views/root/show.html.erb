@@ -1,3 +1,114 @@
 <div class="root-show">
+  <div class="hero-container">
+    <div class="hero-image">
+      <%= image_tag('banners/boats.jpg') %>
+    </div>
+    <div class="hero-title">
+      <h2>Shelley King</h2>
+      <h3> - making island dreams come true</h3>
+    </div>
+  </div>
+  <div class="content-container">
+    <div class="content-block center">
+      <div class="content-block-inner">
+        <a href="#">
+          <div class="listing-type-container">
+            <h4>Residential</h4>
+            <%= image_tag('house.jpg') %>
+            <p>
+              Find the perfect home.
+            </p>
+          </div>
+        </a>
+        <a href="#">
+          <div class="listing-type-container">
+            <h4>Condo</h4>
+            <%= image_tag('condo.png') %>
+            <p>
+              Find a great condominuim.
+            </p>
+          </div>
+        </a>
+        <a href="#">
+          <div class="listing-type-container">
+            <h4>Rental</h4>
+            <%= image_tag('rental_property.jpg') %>
+            <p>
+              Your next rental property.
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="content-block">
+      <div class="content-block-inner">
+        <div class="query-container center">
+          <h2>What are you looking for?</h2>
+          <%= simple_form_for :listings, url: listings_path, method: :get do |f| %>
+            <%= f.input :query, as: :string, label: false, required: false, placeholder: 'City, Address, etc...' %>
 
+            <div class="container">
+              <%= f.input :bedrooms, label: false, required: false, collection: (1..5).to_a.map { |n| ["#{n}+", n] }, prompt: 'Bedrooms' %>
+              <%= f.input :bathrooms, label: false, required: false, collection: (1..5).to_a.map { |n| ["#{n}+", n] }, prompt: 'Bathrooms' %>
+              <%= f.input :price, as: :hidden %>
+
+              <div class="price-range-container">
+                <div class="price-range"></div>
+                <div class="price-range-label left"></div>
+              </div>
+            </div>
+
+            <div class="submit">
+              <%= f.button :submit, 'Search', class: 'button success' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="content-block">
+      <div class="content-block-inner">
+        <div class="short-bio-container">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum
+            posuere lectus, eu congue metus sodales in. Ut imperdiet ultricies
+            sapien, eget vulputate nunc porta ac. In hac habitasse platea dictumst.
+            Curabitur hendrerit ultricies pellentesque. Etiam pellentesque mattis
+            erat. Nulla et justo venenatis, venenatis sem et, luctus enim. Mauris
+            ac tellus ut tortor eleifend condimentum vel vel ex. Donec tincidunt
+            ultricies diam, ac mollis nulla egestas a. In lectus lacus, finibus a
+            pharetra quis, semper vel risus.
+          </p>
+        </div>
+        <div class="photo-container">
+          <%= image_tag('shelley_and_libby.jpg') %>
+        </div>
+      </div>
+    </div>
+    <% if @featured_post %>
+      <div class="content-block center">
+        <div class="content-block-inner">
+          <div class="post-list-items center">
+            <%= render partial: 'posts/list_item', locals: { post: @featured_post } %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% if @featured_testimonials && @featured_testimonials.length > 0 %>
+      <div class="content-block center">
+        <div class="content-block-inner">
+          <h2>Testimonials</h2>
+          <div class="testimonial-list-items">
+            <% @featured_testimonials.each do |testimonial| %>
+              <%= render partial: 'testimonials/list_item', locals: { testimonial: testimonial } %>
+            <% end %>
+          </div>
+          <p>
+            <a class="more" href="/testimonials">
+              See all
+            </a>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

@@ -33,13 +33,132 @@ a {
   }
 }
 
-.button {
-  @include transition(border-color .2s ease-in-out);
+button, .button {
+  @include transition(all .2s ease-in-out);
 
-  border: 2px solid $border-light;
-  padding: 1em;
+  border: $base-border;
+  border-width: 2px;
+  cursor: pointer;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: $font-weight-light;
+  letter-spacing: $link-letter-spacing;
+  padding: 1em 1.5em;
+  background-color: $white;
+  color: $font-medium;
 
   &:hover {
     border-color: red;
+    color: $font-dark;
+  }
+
+  &.success {
+    border-color: $green;
+
+    &:hover {
+      background-color: $green;
+      border-color: darken($green, 10%);
+      color: $white;
+    }
+  }
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid $border-light;
+  outline: none;
+  padding: 0.25em 1em;
+  font-size: 1.25em;
+  margin-bottom: 2em;
+
+  &:hover {
+    border-color: darken($border-light, 50%);
+  }
+}
+
+$select-width: 220px;
+$select-height: 40px;
+
+.select-hidden {
+  display: none;
+  visibility: hidden;
+  padding-right: 10px;
+}
+
+.select {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-size: 16px;
+  color: $white;
+  width: $select-width;
+  height: $select-height;
+}
+
+.select-styled {
+  @include transition(all 0.2s ease-in);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $blue;
+  padding: 8px 15px;
+
+  &:after {
+    content:"";
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-color: $white transparent transparent transparent;
+    position: absolute;
+    top: 16px;
+    right: 10px;
+  }
+
+  &:hover {
+    background-color: darken($blue, 2);
+  }
+
+  &:active, &.active {
+    background-color: darken($blue, 5);
+
+    &:after {
+      top: 9px;
+      border-color: transparent transparent $white transparent;
+    }
+  }
+}
+
+.select-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: darken($blue, 5);
+
+  li {
+    @include transition(all 0.15s ease-in);
+
+    margin: 0;
+    padding: 12px 0;
+    text-indent: 15px;
+    border-top: 1px solid darken($blue, 10);
+
+    &:hover {
+      color: $blue;
+      background: $white;
+    }
+
+    &[rel="hide"] {
+      display: none;
+    }
   }
 }

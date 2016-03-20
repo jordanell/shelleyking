@@ -16,6 +16,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+# Use the jquery ui widgets
+gem 'jquery-ui-rails', '5.0.5'
+
 # Use PostgreSQL for the database
 gem 'pg', '0.18.4'
 
@@ -46,6 +49,12 @@ gem 'meta-tags', '2.0.0'
 
 # For creating ordered lists
 gem 'acts_as_list', '0.7.2'
+
+# React on rails
+gem 'react-rails', '1.6.0'
+
+# For building forms
+gem 'simple_form', '3.2.1'
 
 group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views

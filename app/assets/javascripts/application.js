@@ -12,4 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/slider
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .

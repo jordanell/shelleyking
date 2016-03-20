@@ -71,17 +71,15 @@
   .menu-container {
     text-align: center;
     line-height: $header-menu-line-height;
-    box-shadow: 0 0 8px 1px $shadow-light;
 
     .nav-item {
-      @include transition(color .2s ease-in-out);
+      @include transition(all .2s ease-in-out);
 
       display: inline-block;
       position: relative;
       padding: $header-menu-link-padding;
       font-size: 16px;
-      border-left: $base-border;
-      border-right: $base-border;
+      border: $base-border;
       border-color: transparent;
       color: $font-medium;
     }
@@ -92,7 +90,7 @@
 
       > ul {
         opacity: 1;
-        display: inherit;
+        visibility: visible;
       }
     }
 
@@ -110,10 +108,10 @@
     }
 
     .sub-menu {
-      @include transition(opacity .2s ease-in-out);
+      @include transition(all .2s ease-in-out);
 
       opacity: 0;
-      display: none;
+      visibility: hidden;
       position: absolute;
       top: 100%;
       left: -1px;

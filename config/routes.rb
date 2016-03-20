@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   # Root
   root 'root#show'
 
+  # Listings
+  resources :listings, only: [:index]
+
   # Static page routes
   StaticController::STATIC_PAGES.each do |page|
     get "/#{page}", to: "static##{page}"
