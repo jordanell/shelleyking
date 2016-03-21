@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160108054016) do
+ActiveRecord::Schema.define(version: 20160321043140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(version: 20160108054016) do
   add_index "posts", ["featured"], name: "index_posts_on_featured", using: :btree
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
   add_index "posts", ["visible"], name: "index_posts_on_visible", using: :btree
+
+  create_table "reports", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.text     "description"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "testimonials", force: :cascade do |t|
     t.text     "quote",                      null: false

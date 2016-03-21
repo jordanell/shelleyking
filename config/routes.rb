@@ -13,6 +13,9 @@ Rails.application.routes.draw do
     get "/#{page}", to: "static##{page}"
   end
 
+  # Reports
+  resources :reports, only: [:index]
+
   # Blog posts
   resources :posts, only: [:index, :show]
   get '/blog', to: 'posts#index', as: 'blog'
