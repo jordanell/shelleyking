@@ -1,0 +1,19 @@
+.listings-index {
+  .listings-form {
+    @include span-columns(4);
+
+    @media screen and (max-width: $medium) {
+      @include fill-parent;
+
+      margin-bottom: 50px;
+    }
+  }
+
+  .listings-list {
+    @include span-columns(8);
+
+    @media screen and (max-width: $medium) {
+      @include fill-parent;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.react-mortgage-calculator {
+  margin-top: 50px;
+
+  .form-left-container,
+  .form-right-container,
+  .results-left-container,
+  .results-right-container {
+    @include span-columns(6);
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: $small) {
+      @include fill-parent;
+    }
+  }
+
+  .form-right-container,
+  .results-right-container {
+    @include omega;
+  }
+
+  .calculate-container {
+    margin-bottom: 50px;
+  }
+
+  .results {
+    margin-top: 50px;
+  }
+
+  .results-table {
+    width: 100%;
+
+    td {
+      padding-bottom: 10px;
+    }
+  }
+}

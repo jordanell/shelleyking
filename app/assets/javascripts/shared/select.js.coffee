@@ -1,4 +1,4 @@
-$(document).ready ->
+window.initializeSelects = () ->
   $('select').each ->
     $this = $(this)
     numberOfOptions = $(this).children('option').length
@@ -38,3 +38,6 @@ $(document).ready ->
       $list.hide()
       return
     return
+
+$(document).ready ->
+  window.initializeSelects()

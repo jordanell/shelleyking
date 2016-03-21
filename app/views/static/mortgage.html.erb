@@ -1,0 +1,27 @@
+<div class="static-about">
+  <div class="hero-container">
+    <div class="hero-image">
+      <%= image_tag('banners/boats.jpg') %>
+    </div>
+    <div class="hero-title">
+      <h2>Mortgage Calculator</h2>
+      <h3> - figure out your budget</h3>
+    </div>
+  </div>
+  <div class="content-container">
+    <div class="content-block">
+      <div class="content-block-inner">
+        <div class="calculator">
+          <p>
+            Buying a home usually means getting obtaining a mortgage loan. You
+            will find a useful mortgage calculator below that will give you the
+            monthly payments that you could expect given your particular
+            financing situation.
+          </p>
+
+          <%= react_component('MortgageCalculator') %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

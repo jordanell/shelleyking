@@ -6,7 +6,7 @@ $(document).ready ->
     min = numeral(min).format(minFormat)
     max = numeral(max).format(maxFormat)
 
-    $(".price-range-label").text("$" + min + " - $" + max)
+    $(".price-range-label").text("Price: $" + min + " - $" + max)
 
   $(".price-range").slider({
     range: true,

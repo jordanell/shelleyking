@@ -53,7 +53,17 @@ button, .button {
     color: $font-dark;
   }
 
-  &.success {
+  &.blue {
+    border-color: $blue;
+
+    &:hover {
+      background-color: $blue;
+      border-color: darken($blue, 10%);
+      color: $white;
+    }
+  }
+
+  &.green {
     border-color: $green;
 
     &:hover {

@@ -52,9 +52,13 @@ gem 'acts_as_list', '0.7.2'
 
 # React on rails
 gem 'react-rails', '1.6.0'
+gem 'sprockets-coffee-react', '3.4.1'
 
 # For building forms
 gem 'simple_form', '3.2.1'
+
+# For javascript misc funtionality
+gem 'lodash-rails', '4.6.1'
 
 group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views

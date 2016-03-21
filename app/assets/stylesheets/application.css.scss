@@ -24,6 +24,9 @@
 // Import layout styles
 @import 'layouts/manifest';
 
+// Import listing styles
+@import 'listings/manifest';
+
 // Import root styles
 @import 'root/manifest';
 
@@ -35,3 +38,7 @@
 
 // Import static styles
 @import 'static/manifest';
+
+// Import react styles
+@import 'components/listings/manifest';
+@import 'components/static/manifest';
