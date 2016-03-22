@@ -172,3 +172,11 @@ $select-height: 40px;
     }
   }
 }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: $base-border;
+  margin: 5em 0;
+}
