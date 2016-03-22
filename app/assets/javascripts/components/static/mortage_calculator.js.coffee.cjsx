@@ -17,6 +17,11 @@
   componentWillUnmount: ->
     $(".select-options li").off "click", @handleIntervalChange
 
+  isNumber: (value) ->
+    value = parseFloat(value)
+
+    return !_.isNaN(value)
+
   getFactor: ->
     factor =
       switch @state.interval
@@ -27,9 +32,13 @@
         else 12
 
   calculateLoanAmount: ->
+    return 0 unless @isNumber(@state.purchase) and @isNumber(@state.down)
+
     @state.purchase - @state.down
 
   calculateMonthlyPayment: ->
+    return 0 unless @isNumber(@state.interest) and @isNumber(@state.term)
+
     factor = @getFactor()
     interest = parseFloat(@state.interest) || 0
 
@@ -39,16 +48,22 @@
     @calculateLoanAmount() * rate * (Math.pow(1 + rate, numberOfPayments)) / (Math.pow(1 + rate, numberOfPayments) - 1)
 
   calculateTotalPayments: ->
+    return 0 unless @isNumber(@state.term)
+
     factor = @getFactor()
 
     factor * @state.term
 
   calculateTotalAmountPaid: ->
+    return 0 unless @isNumber(@state.term)
+
     factor = @getFactor()
 
     @calculateMonthlyPayment() * factor * @state.term
 
   calculateTotalInterestPaid: ->
+    return 0 unless @isNumber(@state.term) and @isNumber(@state.purchase) and @isNumber(@state.down)
+
     @calculateTotalAmountPaid() - @calculateLoanAmount()
 
   handleSubmit: (e) ->
@@ -58,15 +73,9 @@
         scrollTop: $(".results").offset().top
     }, 1500);
 
-  handleNumericChange: (e, formatted = true) ->
+  handleNumericChange: (e) ->
     key = $(e.target).attr("class")
     value = $(e.target).val()
-
-    if formatted
-      value = 0 unless value
-      value = 0 if value < 0
-
-      value = numeral().unformat("#{value}")
 
     newState = {}
     newState[key] = value
@@ -84,24 +93,24 @@
         <div className="form-left-container">
           <div className="input">
             <label>Purchase Amount:</label>
-            <input type="text" className="purchase" value={ numeral(@state.purchase).format("$ 0,0[.]00" ) } onChange={ @handleNumericChange }></input>
+            <input type="text" className="purchase" value={ @state.purchase } onChange={ @handleNumericChange }></input>
           </div>
 
           <div className="input">
             <label>Interest Rate:</label>
-            <input type="text" className="interest" value={ @state.interest } onChange={ _.partial(@handleNumericChange, _, false) }></input>
+            <input type="text" className="interest" value={ @state.interest } onChange={ @handleNumericChange }></input>
           </div>
 
           <div className="input">
             <label>Mortgage Term (years):</label>
-            <input type="text" className="term" value={ @state.term } onChange={ _.partial(@handleNumericChange, _, false) }></input>
+            <input type="text" className="term" value={ @state.term } onChange={ @handleNumericChange }></input>
           </div>
         </div>
 
         <div className="form-right-container">
           <div className="input">
             <label>Down Payment:</label>
-            <input type="text" className="down" value={ numeral(@state.down).format("$ 0,0[.]00" ) } onChange={ @handleNumericChange }></input>
+            <input type="text" className="down" value={ @state.down } onChange={ @handleNumericChange }></input>
           </div>
 
           <div className="input">
