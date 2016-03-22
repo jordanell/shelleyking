@@ -78,7 +78,13 @@ group :development, :test do
 
   # For DOM testing
   gem 'capybara', '2.5.0'
-  gem 'capybara-webkit', '1.7.1'
+  gem 'selenium-webdriver', '2.53.0'
+
+  # For integration testing
+  gem 'cucumber-rails', '1.4.3', require: false
+
+  # For database transactions during testing
+  gem 'database_cleaner', '1.5.1'
 end
 
 group :production do

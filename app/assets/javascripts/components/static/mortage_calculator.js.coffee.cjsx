@@ -93,24 +93,24 @@
         <div className="form-left-container">
           <div className="input">
             <label>Purchase Amount:</label>
-            <input type="text" className="purchase" value={ @state.purchase } onChange={ @handleNumericChange }></input>
+            <input type="text" className="purchase" name="purchase" value={ @state.purchase } onChange={ @handleNumericChange }></input>
           </div>
 
           <div className="input">
             <label>Interest Rate:</label>
-            <input type="text" className="interest" value={ @state.interest } onChange={ @handleNumericChange }></input>
+            <input type="text" className="interest" name="interest" value={ @state.interest } onChange={ @handleNumericChange }></input>
           </div>
 
           <div className="input">
             <label>Mortgage Term (years):</label>
-            <input type="text" className="term" value={ @state.term } onChange={ @handleNumericChange }></input>
+            <input type="text" className="term" name="term" value={ @state.term } onChange={ @handleNumericChange }></input>
           </div>
         </div>
 
         <div className="form-right-container">
           <div className="input">
             <label>Down Payment:</label>
-            <input type="text" className="down" value={ @state.down } onChange={ @handleNumericChange }></input>
+            <input type="text" className="down" name="down" value={ @state.down } onChange={ @handleNumericChange }></input>
           </div>
 
           <div className="input">
@@ -132,6 +132,11 @@
       </div>
     </form>
 
+  renderInterestRate: ->
+    return "0.00%" unless @isNumber(@state.interest)
+
+    numeral(@state.interest / 100).format("0.00%")
+
   renderResults: ->
     <div className="container results">
       <div className="results-left-container">
@@ -143,7 +148,7 @@
             </tr>
             <tr>
               <td>Interest Rate:</td>
-              <td>{ numeral(@state.interest / 100).format("0.00%") }</td>
+              <td>{ @renderInterestRate() }</td>
             </tr>
             <tr>
               <td>Payment Inteval:</td>
