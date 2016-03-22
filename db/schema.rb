@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321043140) do
+ActiveRecord::Schema.define(version: 20160322024314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,11 +35,15 @@ ActiveRecord::Schema.define(version: 20160321043140) do
   add_index "posts", ["visible"], name: "index_posts_on_visible", using: :btree
 
   create_table "reports", force: :cascade do |t|
-    t.string   "title",       null: false
+    t.string   "title",                    null: false
     t.text     "description"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "report_file_file_name"
+    t.string   "report_file_content_type"
+    t.integer  "report_file_file_size"
+    t.datetime "report_file_updated_at"
   end
 
   create_table "testimonials", force: :cascade do |t|

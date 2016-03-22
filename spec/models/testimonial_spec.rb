@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: testimonials
+#
+#  id         :integer          not null, primary key
+#  quote      :text             not null
+#  name       :string           not null
+#  featured   :boolean          default(FALSE)
+#  position   :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 require 'rails_helper'
 
 RSpec.describe Testimonial, type: :model do
