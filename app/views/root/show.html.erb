@@ -1,7 +1,7 @@
 <div class="root-show">
   <div class="hero-container">
     <div class="hero-image">
-      <%= image_tag('banners/boats.jpg') %>
+      <%= image_tag('banners/home.jpg') %>
     </div>
     <div class="hero-title">
       <h2>Shelley King</h2>
@@ -11,7 +11,7 @@
   <div class="content-container">
     <div class="content-block center">
       <div class="content-block-inner">
-        <a href="#">
+        <a href="http://www.royallepage.ca/search/homes/bc/campbell-river/?min_price=0&max_price=5000000%2B&min_leaseprice=0&max_leaseprice=5000%2B&property_type=7&house_type=&features=&listing_type=&lat=50.03312260000001&lng=-125.27333540000001&bypass=&address=Campbell+River&address_type=city&city_name=Campbell+River&prov_code=BC&search_str=Campbell+River%2C+BC%2C+Canada&beds=0&baths=0&sfproperty_type%5B7%5D=7&keyword=" target="_blank">
           <div class="listing-type-container">
             <h4>Residential</h4>
             <%= image_tag('house.jpg') %>
@@ -20,7 +20,7 @@
             </p>
           </div>
         </a>
-        <a href="#">
+        <a href="http://www.royallepage.ca/search/homes/bc/campbell-river/?csrfmiddlewaretoken=ADz8DGYWa4vF9OBOBzx2tzNLfm3HFx13&min_price=0&max_price=5000000%2B&min_leaseprice=0&max_leaseprice=5000%2B&property_type=8&house_type=&features=&listing_type=&lat=50.03312260000001&lng=-125.27333540000001&upper_lat=&upper_lng=&lower_lat=&lower_lng=&bypass=&radius=&zoom=&display_type=gallery-view&tier2=False&tier2_proximity=0&search_str=Campbell+River%2C+BC%2C+Canada&beds=0&baths=0&sfproperty_type%5B8%5D=8&keyword=&address=Campbell+River&method=homes&address_type=city&city_name=Campbell+River&prov_code=BC&sortby=" target="_blank">
           <div class="listing-type-container">
             <h4>Condo</h4>
             <%= image_tag('condo.png') %>
@@ -29,12 +29,12 @@
             </p>
           </div>
         </a>
-        <a href="#">
+        <a href="http://www.royallepage.ca/search/homes/bc/campbell-river/?csrfmiddlewaretoken=ADz8DGYWa4vF9OBOBzx2tzNLfm3HFx13&min_price=0&max_price=5000000%2B&min_leaseprice=0&max_leaseprice=5000%2B&property_type=5&house_type=&features=&listing_type=&lat=50.03312260000001&lng=-125.27333540000001&upper_lat=&upper_lng=&lower_lat=&lower_lng=&bypass=&radius=&zoom=&display_type=gallery-view&tier2=False&tier2_proximity=0&search_str=Campbell+River%2C+BC%2C+Canada&beds=0&baths=0&sfproperty_type%5B5%5D=5&keyword=&address=Campbell+River&method=homes&address_type=city&city_name=Campbell+River&prov_code=BC&sortby=" target="_blank">
           <div class="listing-type-container">
-            <h4>Rental</h4>
+            <h4>Investment</h4>
             <%= image_tag('rental_property.jpg') %>
             <p>
-              Your next rental property.
+              Money making properties.
             </p>
           </div>
         </a>
@@ -45,11 +45,11 @@
         <div class="query-container center">
           <h2>What are you looking for?</h2>
           <%= simple_form_for :listings, url: listings_path, method: :get do |f| %>
-            <%= f.input :query, as: :string, label: false, required: false, placeholder: 'City, Address, etc...' %>
+            <%= f.input :query, as: :hidden, label: false, required: false, placeholder: 'City, Address, etc...' %>
 
             <div class="container">
-              <%= f.input :bedrooms, label: false, required: false, collection: (1..5).to_a.map { |n| ["#{n}+", n] }, prompt: 'Bedrooms' %>
-              <%= f.input :bathrooms, label: false, required: false, collection: (1..5).to_a.map { |n| ["#{n}+", n] }, prompt: 'Bathrooms' %>
+              <%= f.input :bedrooms, label: false, required: false, collection: (1..5).to_a.map { |n| ["#{n}+", "#{n}+"] }, prompt: 'Bedrooms' %>
+              <%= f.input :bathrooms, label: false, required: false, collection: (1..5).to_a.map { |n| ["#{n}+", "#{n}+"] }, prompt: 'Bathrooms' %>
               <%= f.input :price, as: :hidden %>
 
               <div class="price-range-container">
