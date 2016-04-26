@@ -8,7 +8,7 @@ describe 'root/show.html.erb' do
   it 'should render quick links' do
     render
 
-    ['Residential', 'Condo', 'Rental'].each do |category|
+    ['Residential', 'Condo', 'Investment'].each do |category|
       rendered.should have_content(category)
     end
   end
