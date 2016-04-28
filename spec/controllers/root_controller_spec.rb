@@ -4,6 +4,12 @@ describe RootController, type: :controller do
   render_views
 
   describe '#show' do
+    it 'should respond 200' do
+      get :show
+
+      response.status.should eq(200)
+    end
+
     it 'should render the show template' do
       get :show
 

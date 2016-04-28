@@ -4,6 +4,12 @@ describe PostsController, type: :controller do
   render_views
 
   describe '#index' do
+    it 'should respond 200' do
+      get :index
+
+      response.status.should eq(200)
+    end
+
     it 'should render the index template' do
       get :index
 
@@ -44,6 +50,12 @@ describe PostsController, type: :controller do
       @params = {
         id: @post.slug
       }
+    end
+
+    it 'should respond 200' do
+      get :show, @params
+
+      response.status.should eq(200)
     end
 
     it 'should render the show template' do
