@@ -1,7 +1,7 @@
 <div class="post-list-item">
-  <a class="more" href="/posts/<%= post.slug %>">
+  <%= link_to post_path(post.slug), class: 'more' do %>
     <h2><%= post.title %></h2>
-  </a>
+  <% end %>
 
   <%= render partial: 'posts/meta', locals: { post: post } %>
   <%= link_to(image_tag(post.hero_image.url(:small)), "/posts/#{post.slug}") %>
@@ -9,8 +9,8 @@
     <%= truncate_html post.body, length: 500 %>
   </p>
   <p>
-    <a class="more" href="/posts/<%= post.slug %>">
+    <%= link_to post_path(post.slug), class: 'more' do %>
       Read Post
-    </a>
+    <% end %>
   </p>
 </div>

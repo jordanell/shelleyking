@@ -8,6 +8,7 @@
       <h3> - making island dreams come true</h3>
     </div>
   </div>
+
   <div class="content-container">
     <div class="content-block center">
       <div class="content-block-inner">
@@ -40,6 +41,7 @@
         </a>
       </div>
     </div>
+
     <div class="content-block">
       <div class="content-block-inner">
         <div class="query-container center">
@@ -65,6 +67,7 @@
         </div>
       </div>
     </div>
+
     <div class="content-block">
       <div class="content-block-inner">
         <div class="short-bio-container">
@@ -85,6 +88,7 @@
         </div>
       </div>
     </div>
+
     <% if @featured_post %>
       <div class="content-block center">
         <div class="content-block-inner">
@@ -104,9 +108,7 @@
             <% end %>
           </div>
           <p>
-            <a class="more" href="/testimonials">
-              See all
-            </a>
+            <%= link_to 'See all', testimonials_path, class: 'more' %>
           </p>
         </div>
       </div>

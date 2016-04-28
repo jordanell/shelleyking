@@ -8,6 +8,7 @@
       <h3> - some helpful documents</h3>
     </div>
   </div>
+
   <div class="content-container">
     <div class="content-block">
       <div class="content-block-inner">
@@ -21,7 +22,9 @@
           I have compiled the list of reports which essential act like a list of
           frequently asked questions for both buyers and sellers.
         </p>
+
         <hr />
+
         <div class="report-list-items">
           <% if @reports && @reports.length > 0 %>
             <% @reports.each do |report| %>
@@ -40,7 +43,7 @@
       <div class="content-block-inner">
         <h3>Have more questions?</h3>
         <div>
-          <a class="button" href="/contact">Get in touch!</a>
+          <%= link_to 'Get in touch!', contact_static_path, class: 'button' %>
         </div>
       </div>
     </div>

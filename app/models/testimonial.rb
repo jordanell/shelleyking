@@ -12,8 +12,10 @@
 #
 
 class Testimonial < ActiveRecord::Base
+  # Gem definitions
   acts_as_list
 
+  # Validations
   validates :quote, presence: true, allow_blank: false
   validates :name, presence: true, allow_blank: false
   validates :featured, inclusion: { in: [true, false] }

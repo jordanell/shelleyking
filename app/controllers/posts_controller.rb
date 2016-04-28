@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   include TruncateHtmlHelper
 
+  # Helper methods
   helper_method :truncate_html
 
   # Before filters

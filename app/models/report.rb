@@ -15,17 +15,18 @@
 #
 
 class Report < ActiveRecord::Base
+  # Gem definitions
   acts_as_list
 
+  # Attachments
   has_attached_file :report_file,
                     storage: :s3,
                     s3_credentials: S3_CONFIG_FILE,
                     bucket: S3_CONFIG['reports_bucket']
 
+  # Validations
   validates :title, presence: true, allow_blank: false
-
   validates_attachment :report_file, presence: true
-
   do_not_validate_attachment_file_type :report_file
 
   # Rails admin config

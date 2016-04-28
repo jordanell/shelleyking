@@ -4,6 +4,6 @@
     <%= report.description %>
   </p>
   <p>
-    <a href="<%= report.report_file.url %>" target="_blank">Download report</a>
+    <%= link_to 'Download report', report.report_file.url, target: '_blank' %>
   </p>
 </div>

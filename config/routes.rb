@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   # Static page routes
   StaticController::STATIC_PAGES.each do |page|
-    get "/#{page}", to: "static##{page}"
+    get "/#{page}", to: "static##{page}", as: "#{page}_static"
   end
 
   # Reports
