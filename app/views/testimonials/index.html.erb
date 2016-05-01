@@ -12,7 +12,7 @@
 
   <div class="container">
     <div class="content">
-      <div class="testimonial-list-items">
+      <div class="container">
         <% if @testimonials && @testimonials.length > 0 %>
           <% @testimonials.each do |testimonial| %>
             <%= render partial: 'testimonials/list_item', locals: { testimonial: testimonial } %>

@@ -45,7 +45,7 @@
 
     <div class="content">
       <div class="query-container center">
-        <h2>What are you looking for?</h2>
+        <h2 class="headline">What are you looking for?</h2>
         <%= simple_form_for :listings, url: listings_path, method: :get do |f| %>
           <%= f.input :query, as: :hidden, label: false, required: false, placeholder: 'City, Address, etc...' %>
 
@@ -91,7 +91,7 @@
 
     <% if @featured_post %>
       <div class="content center">
-        <div class="post-list-items center">
+        <div class="container post-list-items center">
           <%= render partial: 'posts/list_item', locals: { post: @featured_post } %>
         </div>
       </div>
@@ -99,9 +99,9 @@
 
     <% if @featured_testimonials && @featured_testimonials.length > 0 %>
       <div class="content center">
-        <h2>Testimonials</h2>
+        <h2 class="headline">Testimonials</h2>
 
-        <div class="testimonial-list-items">
+        <div class="container">
           <% @featured_testimonials.each do |testimonial| %>
             <%= render partial: 'testimonials/list_item', locals: { testimonial: testimonial } %>
           <% end %>

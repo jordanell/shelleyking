@@ -71,6 +71,11 @@ button, .button {
   }
 }
 
+.button {
+  margin: 1em 0;
+  display: inline-block;
+}
+
 input {
   border: none;
   border-bottom: 1px solid $border-light;

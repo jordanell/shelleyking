@@ -7,17 +7,12 @@
   padding: 5em 0.5em;
 
   .links-container, .social-container {
-    @include outer-container;
-
     li {
       list-style: none;
       font-size: 13px;
     }
   }
 
-  .links-container {
-    @include outer-container;
-  }
 
   .links-container li {
     padding: $footer-link-padding;

@@ -1,7 +1,3 @@
-.testimonial-list-items {
-  @include outer-container;
-}
-
 .testimonial-list-item {
   @include span-columns(4);
   @include omega(3);
