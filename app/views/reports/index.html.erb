@@ -1,50 +1,47 @@
 <div class="reports-index">
-  <div class="hero-container">
-    <div class="hero-image">
-      <%= image_tag('banners/reports.jpg') %>
-    </div>
-    <div class="hero-title">
-      <h2>Reports</h2>
-      <h3> - some helpful documents</h3>
+  <div class="hero" style="background-image: url(<%= image_path('banners/reports.jpg') %>);">
+    <div class="container">
+      <div class="center hero__content hero__content--right">
+        <h1 class="headline headline--white headline--heavy-outlined">Reports</h1>
+        <h5 class="headline headline--white headline--outlined">
+          some helpful documents
+        </h5>
+      </div>
     </div>
   </div>
 
-  <div class="content-container">
-    <div class="content-block">
-      <div class="content-block-inner">
-        <p>
-          Over the whole process of either buying or selling a home, you will have
-          lots of questions. It can be extremely difficult to find the answers on your
-          own. Thats why I am here!
-        </p>
+  <div class="container">
+    <div class="content">
+      <p>
+        Over the whole process of either buying or selling a home, you will have
+        lots of questions. It can be extremely difficult to find the answers on your
+        own. Thats why I am here!
+      </p>
 
-        <p>
-          I have compiled the list of reports which essential act like a list of
-          frequently asked questions for both buyers and sellers.
-        </p>
+      <p>
+        I have compiled the list of reports which essential act like a list of
+        frequently asked questions for both buyers and sellers.
+      </p>
 
-        <hr />
+      <hr />
 
-        <div class="report-list-items">
-          <% if @reports && @reports.length > 0 %>
-            <% @reports.each do |report| %>
-              <%= render partial: 'reports/list_item', locals: { report: report } %>
-            <% end %>
-          <% else %>
-            <p>
-              There are no reports yet. Check back soon!
-            </p>
+      <div class="report-list-items">
+        <% if @reports && @reports.length > 0 %>
+          <% @reports.each do |report| %>
+            <%= render partial: 'reports/list_item', locals: { report: report } %>
           <% end %>
-        </div>
+        <% else %>
+          <p>
+            There are no reports yet. Check back soon!
+          </p>
+        <% end %>
       </div>
     </div>
 
-    <div class="content-block center">
-      <div class="content-block-inner">
-        <h3>Have more questions?</h3>
-        <div>
-          <%= link_to 'Get in touch!', contact_static_path, class: 'button' %>
-        </div>
+    <div class="content center">
+      <h3>Have more questions?</h3>
+      <div>
+        <%= link_to 'Get in touch!', contact_static_path, class: 'button' %>
       </div>
     </div>
   </div>

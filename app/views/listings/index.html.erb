@@ -1,13 +1,22 @@
 <div class="listings-index">
-  <div class="content-container">
-    <div class="content-block">
-      <div class="content-block-inner">
-        <div class="listings-form">
-          <%= react_component('ListingsForm') %>
-        </div>
-        <div class="listings-list">
-          <%= react_component('ListingsList') %>
-        </div>
+  <div class="hero" style="background-image: url(<%= image_path('banners/listings.jpg') %>);">
+    <div class="container">
+      <div class="center hero__content hero__content--right">
+        <h1 class="headline headline--white headline--heavy-outlined">Listings</h1>
+        <h5 class="headline headline--white headline--outlined">
+          find what you are looking for
+        </h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content">
+      <div class="listings-form">
+        <%= react_component('ListingsForm') %>
+      </div>
+      <div class="listings-list">
+        <%= react_component('ListingsList') %>
       </div>
     </div>
   </div>

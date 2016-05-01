@@ -20,7 +20,7 @@
   renderListings: ->
     if @state.loading
       <div className="loading center">
-        <span className="loader loader-quart"></span>
+        <span className="loader loader__quart"></span>
         Loading...
       </div>
     else

@@ -1,27 +1,64 @@
-.container {
-  @include outer-container;
-}
-
-.column-4 {
-  @include span-columns(4);
-}
-
-.column-8 {
-  @include span-columns(8);
-}
-
-.omega {
-  @include omega;
+.left {
+  text-align: left;
 }
 
 .center {
   text-align: center;
 }
 
-.left {
-  text-align: left;
-}
-
 .right {
   text-align: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.container {
+  @include outer-container;
+
+  padding: 0 0.5em;
+}
+
+.container-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@for $i from 1 through 12 {
+  .columns-#{$i} {
+    @include span-columns($i);
+  }
+}
+
+@for $i from 1 through 12 {
+  .shift-#{$i} {
+    @include shift($i);
+  }
+}
+
+.omega {
+  @include omega;
+}
+
+.fill-medium {
+  @media screen and (max-width: $medium) {
+    @include fill-parent;
+    @include shift(0);
+  }
+}
+
+.fill-small {
+  @media screen and (max-width: $small) {
+    @include fill-parent;
+    @include shift(0);
+  }
+}
+
+.relative {
+  position: relative;
 }

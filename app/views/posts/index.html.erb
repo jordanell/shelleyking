@@ -1,28 +1,27 @@
 <div class="posts-index">
-  <div class="hero-container">
-    <div class="hero-image">
-      <%= image_tag('banners/blog.jpg') %>
-    </div>
-    <div class="hero-title">
-      <h2>Blog</h2>
-      <h3> - a few short stories</h3>
+  <div class="hero" style="background-image: url(<%= image_path('banners/blog.jpg') %>);">
+    <div class="container">
+      <div class="center hero__content hero__content--right">
+        <h1 class="headline headline--white headline--heavy-outlined">Blog</h1>
+        <h5 class="headline headline--white headline--outlined">
+          a few short stories
+        </h5>
+      </div>
     </div>
   </div>
 
-  <div class="content-container">
-    <div class="content-block">
-      <div class="content-block-inner">
-        <div class="post-list-items center">
-          <% if @posts && @posts.try(:length) > 0 %>
-            <% @posts.each do |post| %>
-              <%= render partial: 'posts/list_item', locals: { post: post } %>
-            <% end %>
-          <% else %>
-            <p>
-              I have not created any posts yet! Check back soon.
-            </p>
+  <div class="container">
+    <div class="content">
+      <div class="post-list-items center">
+        <% if @posts && @posts.try(:length) > 0 %>
+          <% @posts.each do |post| %>
+            <%= render partial: 'posts/list_item', locals: { post: post } %>
           <% end %>
-        </div>
+        <% else %>
+          <p>
+            I have not created any posts yet! Check back soon.
+          </p>
+        <% end %>
       </div>
     </div>
   </div>

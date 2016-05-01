@@ -1,21 +1,19 @@
 <div class="posts-show">
-  <div class="hero-container">
-    <div class="hero-image">
-      <%= image_tag(@post.hero_image.url(:medium)) %>
-    </div>
-    <div class="hero-title">
-      <h2><%= @post.title %></h2>
+  <div class="hero" style="background-image: url(<%= @post.hero_image.url(:medium) %>);">
+    <div class="container">
+      <div class="center hero__content hero__content--right">
+        <h1 class="headline headline--white headline--heavy-outlined"><%= @post.title %></h1>
+      </div>
     </div>
   </div>
 
-  <div class="content-container">
-    <div class="content-block">
-      <div class="content-block-inner">
-        <%= render partial: 'posts/meta', locals: { post: @post } %>
-        <p>
-          <%= @post.body.html_safe %>
-        </p>
-      </div>
+  <div class="container">
+    <div class="content">
+      <%= render partial: 'posts/meta', locals: { post: @post } %>
+
+      <p>
+        <%= @post.body.html_safe %>
+      </p>
     </div>
   </div>
 </div>

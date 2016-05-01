@@ -1,39 +1,9 @@
-.content-container {
-  background-color: $white;
-  padding: 0 32px;
-}
-
-.content-block {
-  @include outer-container;
-
+.content {
   padding: 96px 0;
   border-bottom: $base-border;
   margin-bottom: 10px;
-
-  &:last-child {
-    border: none;
-  }
 }
 
-.content-block-inner {
-  @include span-columns(10);
-  @include shift(1);
-
-  @media screen and (max-width: $medium) {
-    @include span-columns(10);
-    @include shift(1);
-  }
-
-  @media screen and (max-width: $small) {
-    @include span-columns(12);
-    @include shift(0);
-  }
-
-  h2 {
-    color: $font-dark;
-  }
-
-  p {
-    color: $font-medium;
-  }
+.content:last-child {
+  border: none;
 }

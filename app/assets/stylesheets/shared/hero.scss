@@ -1,35 +1,37 @@
-.hero-container {
-  @include outer-container;
-
+.hero {
   margin-top: 2em;
-  padding: 0 1em;
+  overflow: hidden;
+  background-size: cover;
+  position: relative;
+  background-color: $bg-dark;
+}
 
-  .hero-image {
-    @media screen and (max-width: $small) {
-      display: none;
-    }
+.hero__content {
+  margin: 8em 0;
+  position: relative;
+}
+
+.hero__content--left {
+  @include span-columns(9);
+  @include omega;
+
+  @media screen and (max-width: $medium) {
+    @include shift(0);
+    @include fill-parent;
+
+    text-align: center;
   }
+}
 
-  .hero-image {
-    img {
-      width: 100%;
-      max-height: 200px;
-    }
-  }
+.hero__content--right {
+  @include span-columns(6);
+  @include shift(6);
+  @include omega;
 
-  .hero-title {
-    border-bottom: 2px solid $blue;
-  }
+  @media screen and (max-width: $medium) {
+    @include shift(0);
+    @include fill-parent;
 
-  h2 {
-    display: inline-block;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-  }
-
-  h3 {
-    display: inline-block;
-    font-style: italic;
-    font-weight: $font-weight-light;
+    text-align: center;
   }
 }

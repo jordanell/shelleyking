@@ -1,55 +1,52 @@
 <div class="static-marketing">
-  <div class="hero-container">
-    <div class="hero-image">
-      <%= image_tag('banners/marketing.jpg') %>
-    </div>
-    <div class="hero-title">
-      <h2>Marketing</h2>
-      <h3> - marketing your home</h3>
+  <div class="hero" style="background-image: url(<%= image_path('banners/marketing.jpg') %>);">
+    <div class="container">
+      <div class="center hero__content hero__content--right">
+        <h1 class="headline headline--white headline--heavy-outlined">Marketing</h1>
+        <h5 class="headline headline--white headline--outlined">
+          marketing your home
+        </h5>
+      </div>
     </div>
   </div>
 
-  <div class="content-container">
-    <div class="content-block">
-      <div class="content-block-inner">
-        <p>
-          If you are currently selling, or thinking about selling your home, contact
-          Shelley for a comprehensive evaluation of your property.
-        </p>
-        <p>
-          This process consists of a home visit followed by one on one meeting to go over
-          the home evaluation, and marketing place given multiple factors such as: similar
-          sold properties, properties similar to your own, asking price, etc.
-        </p>
-        <p>
-          There are many factors to consider when marketing your home, such as:
-        </p>
+  <div class="container">
+    <div class="content">
+      <p>
+        If you are currently selling, or thinking about selling your home, contact
+        Shelley for a comprehensive evaluation of your property.
+      </p>
+      <p>
+        This process consists of a home visit followed by one on one meeting to go over
+        the home evaluation, and marketing place given multiple factors such as: similar
+        sold properties, properties similar to your own, asking price, etc.
+      </p>
+      <p>
+        There are many factors to consider when marketing your home, such as:
+      </p>
 
-        <ul>
-          <li>Location</li>
-          <li>Lot size / condition</li>
-          <li>Parking</li>
-          <li>Building construction year</li>
-          <li>Layout</li>
-          <li>Views</li>
-          <li>Similar properties</li>
-          <li>Competing properties</li>
-          <li>Market conditions</li>
-        </ul>
+      <ul class="list list--padded-left">
+        <li>Location</li>
+        <li>Lot size / condition</li>
+        <li>Parking</li>
+        <li>Building construction year</li>
+        <li>Layout</li>
+        <li>Views</li>
+        <li>Similar properties</li>
+        <li>Competing properties</li>
+        <li>Market conditions</li>
+      </ul>
 
-        <p>
-          Shelley summarizes all of these factors in an easy to understand
-          recommended list price and probable selling range.
-        </p>
-      </div>
+      <p>
+        Shelley summarizes all of these factors in an easy to understand
+        recommended list price and probable selling range.
+      </p>
     </div>
 
-    <div class="content-block center">
-      <div class="content-block-inner">
-        <h3>Interested in selling your home?</h3>
-        <div>
-          <%= link_to 'Get in touch!', contact_static_path, class: 'button' %>
-        </div>
+    <div class="content center">
+      <h3>Interested in selling your home?</h3>
+      <div>
+        <%= link_to 'Get in touch!', contact_static_path, class: 'button' %>
       </div>
     </div>
   </div>

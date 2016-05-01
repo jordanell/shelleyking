@@ -1,17 +1,18 @@
 <div class="root-show">
-  <div class="hero-container">
-    <div class="hero-image">
-      <%= image_tag('banners/home.jpg') %>
-    </div>
-    <div class="hero-title">
-      <h2>Shelley King</h2>
-      <h3> - making island dreams come true</h3>
+  <div class="hero" style="background-image: url(<%= image_path('banners/home.jpg') %>);">
+    <div class="container">
+      <div class="center hero__content hero__content--right">
+        <h1 class="headline headline--white headline--heavy-outlined">Shelley King</h1>
+        <h5 class="headline headline--white headline--outlined">
+          making island dreams come true
+        </h5>
+      </div>
     </div>
   </div>
 
-  <div class="content-container">
-    <div class="content-block center">
-      <div class="content-block-inner">
+  <div class="container">
+    <div class="content center">
+      <div class="container">
         <a href="http://www.royallepage.ca/search/homes/bc/campbell-river/?min_price=0&max_price=5000000%2B&min_leaseprice=0&max_leaseprice=5000%2B&property_type=7&house_type=&features=&listing_type=&lat=50.03312260000001&lng=-125.27333540000001&bypass=&address=Campbell+River&address_type=city&city_name=Campbell+River&prov_code=BC&search_str=Campbell+River%2C+BC%2C+Canada&beds=0&baths=0&sfproperty_type%5B7%5D=7&keyword=" target="_blank">
           <div class="listing-type-container">
             <h4>Residential</h4>
@@ -42,35 +43,33 @@
       </div>
     </div>
 
-    <div class="content-block">
-      <div class="content-block-inner">
-        <div class="query-container center">
-          <h2>What are you looking for?</h2>
-          <%= simple_form_for :listings, url: listings_path, method: :get do |f| %>
-            <%= f.input :query, as: :hidden, label: false, required: false, placeholder: 'City, Address, etc...' %>
+    <div class="content">
+      <div class="query-container center">
+        <h2>What are you looking for?</h2>
+        <%= simple_form_for :listings, url: listings_path, method: :get do |f| %>
+          <%= f.input :query, as: :hidden, label: false, required: false, placeholder: 'City, Address, etc...' %>
 
-            <div class="container">
-              <%= f.input :bedrooms, label: false, required: false, collection: (1..5).to_a.map { |n| ["#{n}+", "#{n}+"] }, prompt: 'Bedrooms' %>
-              <%= f.input :bathrooms, label: false, required: false, collection: (1..5).to_a.map { |n| ["#{n}+", "#{n}+"] }, prompt: 'Bathrooms' %>
-              <%= f.input :price, as: :hidden %>
+          <div class="container">
+            <%= f.input :bedrooms, label: false, required: false, collection: (1..5).to_a.map { |n| ["#{n}+", "#{n}+"] }, prompt: 'Bedrooms' %>
+            <%= f.input :bathrooms, label: false, required: false, collection: (1..5).to_a.map { |n| ["#{n}+", "#{n}+"] }, prompt: 'Bathrooms' %>
+            <%= f.input :price, as: :hidden %>
 
-              <div class="price-range-container">
-                <div class="price-range"></div>
-                <div class="price-range-label left"></div>
-              </div>
+            <div class="price-range-container">
+              <div class="price-range"></div>
+              <div class="price-range__label left"></div>
             </div>
+          </div>
 
-            <div class="submit">
-              <%= f.button :submit, 'Search', class: 'button blue' %>
-            </div>
-          <% end %>
-        </div>
+          <div class="submit">
+            <%= f.button :submit, 'Search', class: 'button blue' %>
+          </div>
+        <% end %>
       </div>
     </div>
 
-    <div class="content-block">
-      <div class="content-block-inner">
-        <div class="short-bio-container">
+    <div class="content">
+      <div class="container">
+        <div class="columns-8 fill-small">
           <p>
             Originally born in New Brunswick, my family quickly moved to Vancouver
             Island to root itself in this beautiful province and become a part
@@ -83,34 +82,34 @@
             of this paradise called Campbell River.
           </p>
         </div>
-        <div class="photo-container">
-          <%= image_tag('shelley_and_libby.jpg') %>
+
+        <div class="columns-4 fill-small">
+          <%= image_tag('shelley_and_libby.jpg', class: 'image--contained') %>
         </div>
       </div>
     </div>
 
     <% if @featured_post %>
-      <div class="content-block center">
-        <div class="content-block-inner">
-          <div class="post-list-items center">
-            <%= render partial: 'posts/list_item', locals: { post: @featured_post } %>
-          </div>
+      <div class="content center">
+        <div class="post-list-items center">
+          <%= render partial: 'posts/list_item', locals: { post: @featured_post } %>
         </div>
       </div>
     <% end %>
+
     <% if @featured_testimonials && @featured_testimonials.length > 0 %>
-      <div class="content-block center">
-        <div class="content-block-inner">
-          <h2>Testimonials</h2>
-          <div class="testimonial-list-items">
-            <% @featured_testimonials.each do |testimonial| %>
-              <%= render partial: 'testimonials/list_item', locals: { testimonial: testimonial } %>
-            <% end %>
-          </div>
-          <p>
-            <%= link_to 'See all', testimonials_path, class: 'more' %>
-          </p>
+      <div class="content center">
+        <h2>Testimonials</h2>
+
+        <div class="testimonial-list-items">
+          <% @featured_testimonials.each do |testimonial| %>
+            <%= render partial: 'testimonials/list_item', locals: { testimonial: testimonial } %>
+          <% end %>
         </div>
+
+        <p>
+          <%= link_to 'See all', testimonials_path, class: 'more' %>
+        </p>
       </div>
     <% end %>
   </div>

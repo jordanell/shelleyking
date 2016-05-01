@@ -1,26 +1,27 @@
 <div class="static-contact">
-  <div class="hero-container">
-    <div class="hero-image">
-      <%= image_tag('banners/contact.jpg') %>
-    </div>
-    <div class="hero-title">
-      <h2>Contact</h2>
-      <h3> - get in touch</h3>
+  <div class="hero" style="background-image: url(<%= image_path('banners/contact.jpg') %>);">
+    <div class="container">
+      <div class="center hero__content hero__content--right">
+        <h1 class="headline headline--white headline--heavy-outlined">Contact</h1>
+        <h5 class="headline headline--white headline--outlined">
+          get in touch
+        </h5>
+      </div>
     </div>
   </div>
 
-  <div class="content-container">
-    <div class="content-block">
-      <div class="content-block-inner">
-        <div class="left-info">
-          <h4>Contact Info</h4>
+  <div class="container">
+    <div class="content">
+      <div class="container">
+        <div class="columns-6 fill-small">
+          <h4 class="headline">Contact Info</h4>
           <p>Cell Phone: 250-203-0096</p>
           <p>Office Phone: 250-286-3294</p>
           <p>Email: shelleyking@royallepage.ca</p>
           <p>Fax: 250-286-1932</p>
         </div>
-        <div class="right-info">
-        <h4>Mailing Address</h4>
+        <div class="columns-6 omega fill-small">
+          <h4 class="headline">Mailing Address</h4>
           <p>Royal Lepage</p>
           <p>972 Shoppers Row</p>
           <p>Campbell River, BC</p>
@@ -29,12 +30,10 @@
       </div>
     </div>
 
-    <div class="content-block center">
-      <div class="content-block-inner">
-        <h3>Looking to move?</h3>
-        <div>
-          <a class="button" href="http://www.royallepage.ca/en/bc/campbell-river/properties" target="_blank">Show me the listings</a>
-        </div>
+    <div class="content center">
+      <h3>Looking to move?</h3>
+      <div>
+        <a class="button" href="http://www.royallepage.ca/en/bc/campbell-river/properties" target="_blank">Show me the listings</a>
       </div>
     </div>
   </div>

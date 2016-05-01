@@ -1,28 +1,27 @@
 <div class="testimonials-index">
-  <div class="hero-container">
-    <div class="hero-image">
-      <%= image_tag('banners/testimonials.jpg') %>
-    </div>
-    <div class="hero-title">
-      <h2>Testimonials</h2>
-      <h3> - see what everyone is saying</h3>
+  <div class="hero" style="background-image: url(<%= image_path('banners/testimonials.jpg') %>);">
+    <div class="container">
+      <div class="center hero__content hero__content--right">
+        <h1 class="headline headline--white headline--heavy-outlined">Testimonials</h1>
+        <h5 class="headline headline--white headline--outlined">
+          see what everyone is saying
+        </h5>
+      </div>
     </div>
   </div>
 
-  <div class="content-container">
-    <div class="content-block">
-      <div class="content-block-inner">
-        <div class="testimonial-list-items">
-          <% if @testimonials && @testimonials.length > 0 %>
-            <% @testimonials.each do |testimonial| %>
-              <%= render partial: 'testimonials/list_item', locals: { testimonial: testimonial } %>
-            <% end %>
-          <% else %>
-            <p>
-              There are no testimonials yet. Check back soon!
-            </p>
+  <div class="container">
+    <div class="content">
+      <div class="testimonial-list-items">
+        <% if @testimonials && @testimonials.length > 0 %>
+          <% @testimonials.each do |testimonial| %>
+            <%= render partial: 'testimonials/list_item', locals: { testimonial: testimonial } %>
           <% end %>
-        </div>
+        <% else %>
+          <p class="center">
+            There are no testimonials yet. Check back soon!
+          </p>
+        <% end %>
       </div>
     </div>
   </div>

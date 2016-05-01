@@ -1,15 +1,21 @@
 <div class="errors-show">
-  <div class="content-container">
-    <div class="content-block">
-      <div class="content-block-inner">
-        <h2>Whoops!</h2>
-        <p>
-          A <%= @status_code ? @status_code : nil %> error was caused by your request.
-        <p>
-        <p>
-          Please make sure you are visiting the correct page, or try again.
-        </p>
+  <div class="hero" style="background-image: url(<%= image_path('banners/error.jpg') %>);">
+    <div class="container">
+      <div class="center hero__content hero__content--right">
+        <h1 class="headline headline--white headline--heavy-outlined">Whoops!</h1>
       </div>
     </div>
+  </div>
+
+  <div class="container">
+    <div class="content center">
+      <p>
+        A <%= @status_code ? @status_code : nil %> error was
+        caused by your request.
+      <p>
+      <p>
+        Please make sure you are visiting the correct page,
+        or try again.
+      </p>
   </div>
 </div>
